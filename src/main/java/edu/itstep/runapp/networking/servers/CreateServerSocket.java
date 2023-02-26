@@ -14,6 +14,8 @@ public class CreateServerSocket {
         Server udp = gsf.getServerInstance("udp");
         Thread udpThread = new Thread(udp,"UDP-THREAD");
         udpThread.start();
-        //Server asyncSocket = gsf.getServerInstance("async");
+        Server asyncSocket = gsf.getServerInstance("async");
+        Thread asyncThread = new Thread(asyncSocket, "ASYNC-THREAD");
+        asyncThread.start();
     }
 }

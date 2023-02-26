@@ -8,7 +8,7 @@ public class GetServerFactory {
        else if(type.equalsIgnoreCase("tcp time server")){
            return new TcpTimeServer();
        }else if (type.equalsIgnoreCase("async")){
-           throw new RuntimeException("not implement yet");
+           return  new ASyncTcpServer();
        }else if(type.equalsIgnoreCase("udp")){
            return new UdpServer();
        }
