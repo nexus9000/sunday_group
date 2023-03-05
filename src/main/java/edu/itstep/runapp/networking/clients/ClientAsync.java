@@ -15,7 +15,7 @@ public class ClientAsync {
     private static final int PORT_NUMBER = 5001;
     public static void main(String...arg){
         try(AsynchronousSocketChannel client = AsynchronousSocketChannel.open()){
-            Future<Void> res = client.connect(new InetSocketAddress("192.168.100.4",5001));
+            Future<Void> res = client.connect(new InetSocketAddress(HOST_NAME,5001));
             res.get();
             String str = "test by client";
             ByteBuffer buffer = ByteBuffer.wrap(str.getBytes());

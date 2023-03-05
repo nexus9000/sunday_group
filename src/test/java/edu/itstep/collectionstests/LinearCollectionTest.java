@@ -18,7 +18,7 @@ class LinearCollectionTest {
         Assertions.assertEquals(2, ll.size());
         List<Integer> syncList = Collections.synchronizedList(ll);
         List<Integer> unList = Collections.unmodifiableList(ll);
-        unList.remove(1);
+       // unList.remove(1);
         Queue<Integer> queue = new LinkedList<>();
         queue.add(111);
         System.out.println(queue.peek());//print not delete

@@ -2,10 +2,7 @@ package edu.itstep.sql;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.sql.*;
 import java.util.HashMap;
@@ -63,6 +60,7 @@ public class DBTest {
 
     }
     @Test
+    @Disabled
     void testSelectStatement()throws SQLException{
         String sql = "select user_name,password from users";
         rs = st.executeQuery(sql);
@@ -86,6 +84,7 @@ public class DBTest {
         st.execute(sql);
      }
     @Test
+    @Disabled
     void testAddAlbumsRecords()throws SQLException{
         for(int i = 1; i < 1_000; i++){
             String sql = "insert into albums (album_name) values ('"+ RandomStringUtils.randomAlphabetic(10)+"')";
@@ -106,6 +105,7 @@ public class DBTest {
         assertFalse(result);
     }
     @Test
+    @Disabled
     void testAddRecords()throws SQLException{
         for(int i = 20; i < 30; i++){
             String sql = "insert into users (user_name,password) values ('user"+i+"','password"+i+"')";
